@@ -8,3 +8,21 @@ Relevance:
 
 	The developing website should organize for consumers (customers) to make online pre-orders to establishments for the appointed time and to ensure that the order will taken away, the mandatory payment for the order through the application will be made.
 	The application should save time for consumers (customers), replace in the establishments the manual acceptance and processing of orders, and also eliminate in the institutions the disorder that arises from large queues.
+
+Programming languages and Technologys:
+
+python3, 
+flask,
+html/css, 
+javascript, 
+bootstrap, 
+postgresql, 
+Google Maps.
+
+Team: 
+
+Almaz97 (back-end), 
+AnasKg  (front-end), 
+AlliKalykov (front-end).
+
+
