@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DiamonD</title>
+    <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+  </head>
+  <body>
+
+    <!-- Head -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="base.html">DiamonD</a>
+    </div>
+    <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Поиск">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{{ url_for('signup') }}"><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>
+      <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Войти</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Menu -->
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="base.html">Все акции</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Еда <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="1.html">Fast food</a></li>
+        <li><a href="1.html">Национальная кухня</a></li>
+        <li><a href="1.html">Европейская кухня</a></li>
+        <li><a href="1.html">Pizza</a></li>
+      </ul>
+    </li>
+     <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Заведения <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="1.html">Кафе</a></li>
+        <li><a href="1.html">Рестораны</a></li>
+        <li><a href="1.html">Столовые</a></li>
+      </ul>
+    </li>
+  </ul>
+
+<!-- Blocks -->
+
+  <div class="row">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+<footer>
+  <span class="left">Все права защищены &copy; 2018</span>
+  </footer>
+  </body>
+</html>
