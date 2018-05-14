@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+  {% for assort in assorts %}
+
+    <h1>Title - {{ assort.title_assortment }}</h1>
+    <li>Price - {{ assort.price }}</li>
+    <li>Description - {{ assort.description }}</li>
+    <li>Id_cuisine - {{ assort.id_cuisine }}</li>
+    <li>Id_category_assortment - {{ assort.id_category_assortment }}</li>
+
+
+  {% endfor %}
+</ul>
+
+{% endblock %}

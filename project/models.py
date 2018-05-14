@@ -5,6 +5,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, IntegerField
 from flask_bootstrap import Bootstrap
 from wtforms.validators import InputRequired, Email, Length
+from flask_login import UserMixin, LoginManager
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "this_is_secret"
@@ -13,10 +15,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] =\
         'postgresql://almaz:Almaz@localhost/diamond'
 modus = Modus(app)
 db = SQLAlchemy(app)
+login_manager = LoginManager(app)
 
+@login_manager.user_loader
+def load_user(user_id):
+    return Client.query.get(int(user_id))
 
 #DB models
-class Client(db.Model):
+class Client(UserMixin, db.Model):
     #db.Columns
     __tablename__ = "Client"
     id = db.Column(db.Integer, primary_key=True)

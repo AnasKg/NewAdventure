@@ -4,6 +4,12 @@
 
 {% block content %}
 
-  <h1>Анас лох!!!</h1>
+<ul>
+  {% for est in ests %}
+
+    <li><a href="#">{{ est.title_establishment }}</a></li>
+
+  {% endfor %}
+</ul>
 
 {% endblock %}
