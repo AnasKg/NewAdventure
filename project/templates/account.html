@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+<div class="container">
+
+  <form class="form-signin" method="POST" action="/account">
+    <h2 class="form-signin-heading">Редактировать</h2>
+    <h1>Hello {{ current_user.username }}</h1>
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.first) }}
+    {{ wtf.form_field(form.last) }}
+  
+    {{ wtf.form_field(form.submit) }}
+
+
+    <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Редактировать</button> -->
+  </form>
+
+</div> <!-- /container -->
+{% endblock %}

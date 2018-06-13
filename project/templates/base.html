@@ -16,7 +16,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('index') }}">DiamonD</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">HOME</a>
     </div>
     <form class="navbar-form navbar-left">
       <div class="input-group">
@@ -43,22 +43,22 @@
 <!-- Menu -->
 
   <ul class="nav nav-tabs">
-    <li class="active"><a href="base.html">Все акции</a></li>
+    <li class="active"><a href="{{ url_for('index') }}">Все акции</a></li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Еда <span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="1.html">Fast food</a></li>
-        <li><a href="1.html">Национальная кухня</a></li>
-        <li><a href="1.html">Европейская кухня</a></li>
-        <li><a href="1.html">Pizza</a></li>
+        <li><a href="{{ url_for('est') }}">Fast food</a></li>
+        <!-- <li><a href="#">Национальная кухня</a></li>
+        <li><a href="#">Европейская кухня</a></li>
+        <li><a href="#">Pizza</a></li> -->
       </ul>
     </li>
      <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Заведения <span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a href="1.html">Кафе</a></li>
-        <li><a href="1.html">Рестораны</a></li>
-        <li><a href="1.html">Столовые</a></li>
+        <!-- <li><a href="#">Кафе</a></li>
+        <li><a href="#">Рестораны</a></li> -->
+        <li><a href="{{ url_for('est') }}">Столовые</a></li>
       </ul>
     </li>
   </ul>
@@ -70,8 +70,10 @@
     {% endblock %}
   </div>
 
-<footer>
-  <span class="left">Все права защищены &copy; 2018</span>
+<div class="navbar navbar-fixed-bottom">
+  <footer class="footer">
+    <span class="left">Все права защищены &copy; 2018</span>
   </footer>
+</div>
   </body>
 </html>

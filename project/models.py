@@ -8,6 +8,7 @@ from wtforms.validators import InputRequired, Email, Length
 from flask_login import UserMixin, LoginManager
 
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "this_is_secret"
 Bootstrap(app)
@@ -132,5 +133,7 @@ class CuisineofEstablishment(db.Model):
     id_establishment = db.Column(db.Integer, db.ForeignKey('Establishment.id'))#ForeignKey
     id_cuisine = db.Column(db.Integer, db.ForeignKey('Cuisine.id'))
 
+
 if __name__ == '__main__':
     app.run(debug=True)
+ 

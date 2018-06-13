@@ -1,18 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h1 align="center">Меню</h1>
 <ul>
   {% for assort in assorts %}
-
-    <h1>Title - {{ assort.title_assortment }}</h1>
-    <li>Price - {{ assort.price }}</li>
-    <li>Description - {{ assort.description }}</li>
-    <li>Id_cuisine - {{ assort.id_cuisine }}</li>
-    <li>Id_category_assortment - {{ assort.id_category_assortment }}</li>
-
+    <form class="" action="" method="post">
+      <h1>{{ assort.title_assortment }}</h1>
+      <li>Цена - {{ assort.price }}</li>
+      <li>Описание - {{ assort.description }}</li>
+      <li>Id_кухни - {{ assort.id_cuisine }}</li>
+      <li>Id_категории_ассортимента  - {{ assort.id_category_assortment }}</li>
+      {% if current_user.is_authenticated %}
+        <button type="submit" name="order" value="{{ assort.price }}">Заказать</button>
+      {% else %}
+        <h3>Чтобы заказать, вам нужно авторизоваться!</h3>
+        <a href="{{ url_for('login') }}" >авторизоваться</a>
+      {% endif %}
+    </form>
 
   {% endfor %}
 </ul>
+
+
+<!-- <div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <img src="{{ url_for('static', filename='food2.jpg') }}" alt="...">
+    <div class="caption">
+      <h3>Еда</h3>
+
+      <p><a href="{{ url_for('food') }}" class="btn btn-primary" role="button">Посмотреть</a> </p>
+    </div>
+  </div>
+</div> -->
 
 {% endblock %}
