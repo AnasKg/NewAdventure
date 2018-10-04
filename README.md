@@ -22,7 +22,7 @@ Google Maps.
 Team: 
 
 Almaz97 (back-end), 
-AnasKg  (front-end), 
+AnasKg  (back-end), 
 AlliKalykov (front-end).
 
 
